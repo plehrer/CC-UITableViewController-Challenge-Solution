@@ -1,5 +1,5 @@
 //
-//  PLViewController.h
+//  PLTableViewController.h
 //  UITableViewController Challenge Solution
 //
 //  Created by Peter Lehrer on 10/21/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PLViewController : UIViewController
+@interface PLTableViewController : UITableViewController
 
 @end
