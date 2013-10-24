@@ -10,9 +10,14 @@
 
 @interface PLTableViewController ()
 
+
 @end
 
 @implementation PLTableViewController
+
+const int SECTION_0 = 2;
+const int SECTION_1 = 1;
+const int SECTION_2 = 3;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -46,7 +51,7 @@
 {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 2;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -54,9 +59,12 @@
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
 	if (section == 0) {
-		return 3;
+		return SECTION_0;
+	}
+	else if (section == 1) {
+		return SECTION_1;
 	} else {
-		return 2;
+		return SECTION_2;
 	}
     
 }
@@ -67,12 +75,17 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
-    cell.textLabel.text = [NSString stringWithFormat:@"Row %i", indexPath.row];
+    //cell.textLabel.text = [NSString stringWithFormat:@"Row %i", indexPath.row];
 	if (indexPath.section == 0) {
-		cell.backgroundColor = [UIColor redColor];
+		//cell.backgroundColor = [UIColor redColor];
+		cell.textLabel.text = @"I am section 0.";
+	}
+	else if (indexPath.section == 1) {
+		cell.textLabel.text = @"another section";
+		//cell.backgroundColor = [UIColor blueColor];
 	}
 	else {
-		cell.backgroundColor = [UIColor blueColor];
+		cell.textLabel.text = [NSString stringWithFormat:@"Cell %i", indexPath.row];
 	}
     return cell;
 }
