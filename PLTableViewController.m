@@ -77,15 +77,16 @@ const int SECTION_2 = 3;
     // Configure the cell...
     //cell.textLabel.text = [NSString stringWithFormat:@"Row %i", indexPath.row];
 	if (indexPath.section == 0) {
-		//cell.backgroundColor = [UIColor redColor];
+		cell.backgroundColor = [UIColor redColor];
 		cell.textLabel.text = @"I am section 0.";
 	}
 	else if (indexPath.section == 1) {
 		cell.textLabel.text = @"another section";
-		//cell.backgroundColor = [UIColor blueColor];
+		cell.backgroundColor = [UIColor blueColor];
 	}
 	else {
 		cell.textLabel.text = [NSString stringWithFormat:@"Cell %i", indexPath.row];
+		cell.backgroundColor = [UIColor yellowColor];
 	}
     return cell;
 }
